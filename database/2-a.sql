@@ -9,7 +9,7 @@ CREATE TABLE Products (
     product_id INT AUTO_INCREMENT PRIMARY KEY,
     product_name VARCHAR(255) NOT NULL,
     product_description TEXT,
-    product_price DECIMAL(10, 2),
+    product_price INT,
     maker_id INT,
     FOREIGN KEY (maker_id) REFERENCES Makers(maker_id)
 );
@@ -42,7 +42,7 @@ CREATE TABLE OrderDetails (
     order_id INT,
     product_id INT,
     quantity INT,
-    total_price DECIMAL(10, 2),
+    total_price INT,
     FOREIGN KEY (order_id) REFERENCES Orders(order_id),
     FOREIGN KEY (product_id) REFERENCES Products(product_id)
 );
